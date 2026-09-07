@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.stockpredictor.controller.ExportController"
+      spacing="30" styleClass="tab-content">
+    
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <!-- Left: Export Section -->
+    <VBox spacing="20" prefWidth="450" styleClass="export-panel">
+        
+        <Label text="📤 Izvoz podataka" styleClass="panel-title"/>
+        
+        <VBox spacing="10" styleClass="config-group">
+            <Label text="Mapa za izvoz" styleClass="control-label"/>
+            <HBox spacing="10">
+                <TextField fx:id="exportPathField" HBox.hgrow="ALWAYS" styleClass="text-input"/>
+                <Button fx:id="browseButton" text="Odaberi" styleClass="secondary-button"/>
+            </HBox>
+        </VBox>
+        
+        <Separator/>
+        
+        <VBox spacing="15" styleClass="export-options">
+            <Label text="Mogućnosti izvoza" styleClass="section-title"/>
+            
+            <HBox spacing="15">
+                <Button fx:id="exportDataButton" text="Izvezi podatke" 
+                        styleClass="export-button" prefWidth="180" disable="true"/>
+                <Label text="Izvoz izvornih podataka o cijenama u CSV" styleClass="export-desc"/>
+            </HBox>
+            
+            <HBox spacing="15">
+                <Button fx:id="exportPredictionsButton" text="Izvezi predikcije" 
+                        styleClass="export-button" prefWidth="180" disable="true"/>
+                <Label text="Izvoz predikcija modela s dodatnim podatcima" styleClass="export-desc"/>
+            </HBox>
+            
+            <HBox spacing="15">
+                <Button fx:id="exportCombinedButton" text="Izvezi zajedno" 
+                        styleClass="export-button" prefWidth="180" disable="true"/>
+                <Label text="Izvoz usporedbe stvarnih i predviđenih cijena" styleClass="export-desc"/>
+            </HBox>
+        </VBox>
+        
+        <Region VBox.vgrow="ALWAYS"/>
+        
+        <Label fx:id="exportStatusLabel" text="" styleClass="status-label"/>
+        
+    </VBox>
+    
+    <Separator orientation="VERTICAL"/>
+
+    <!-- Right: Settings Section -->
+    <VBox spacing="20" HBox.hgrow="ALWAYS" styleClass="settings-panel">
+        
+        <Label text="⚙️ Postavke aplikacije" styleClass="panel-title"/>
+        
+        <!-- API Key Section -->
+        <VBox spacing="10" styleClass="config-group">
+            <Label text="Pristupni ključ Alpha Vantage" styleClass="section-title"/>
+            <Label text="Besplatni ključ: alphavantage.co/support/#api-key" styleClass="hint-text"/>
+            <HBox spacing="10">
+                <TextField fx:id="apiKeyField" promptText="Unesite pristupni ključ" 
+                          HBox.hgrow="ALWAYS" styleClass="text-input"/>
+                <Button fx:id="saveApiKeyButton" text="Spremi ključ" styleClass="primary-button"/>
+            </HBox>
+        </VBox>
+        
+        <Separator/>
+        
+        <!-- Default Settings -->
+        <Label text="Zadane postavke" styleClass="section-title"/>
+        
+        <GridPane hgap="20" vgap="15">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50"/>
+                <ColumnConstraints percentWidth="50"/>
+            </columnConstraints>
+            
+            <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <Label text="Zadana normalizacija" styleClass="control-label"/>
+                <ComboBox fx:id="defaultNormCombo" prefWidth="200"/>
+            </VBox>
+            
+            <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <Label text="Zadani ulog ($)" styleClass="control-label"/>
+                <TextField fx:id="defaultInvestmentField" prefWidth="200" styleClass="text-input"/>
+            </VBox>
+            
+            <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2">
+                <Label text="Zadani omjer podjele podataka" styleClass="control-label"/>
+                <Slider fx:id="defaultTrainRatioSlider" min="0.5" max="0.95" value="0.8"/>
+                <Label fx:id="trainRatioLabel" text="80% / 20%" styleClass="slider-label"/>
+            </VBox>
+            
+            <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <Label text="Zadano izdvajanje obilježja" styleClass="control-label"/>
+                <CheckBox fx:id="defaultMACheckbox" text="Izračunaj pomični prosjek"/>
+                <CheckBox fx:id="defaultRSICheckbox" text="Izračunaj RSI"/>
+            </VBox>
+        </GridPane>
+        
+        <Region VBox.vgrow="ALWAYS"/>
+        
+        <HBox spacing="15" alignment="CENTER_RIGHT">
+            <Button fx:id="resetSettingsButton" text="Vrati zadano" styleClass="secondary-button"/>
+            <Button fx:id="saveSettingsButton" text="Spremi postavke" styleClass="primary-button"/>
+        </HBox>
+        
+        <Label fx:id="settingsStatusLabel" text="" styleClass="status-label"/>
+        
+    </VBox>
+
+</HBox>

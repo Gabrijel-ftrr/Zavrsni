@@ -1,0 +1,23 @@
+2026-09-07 09:17:38.066 [Thread-5] INFO  com.stockpredictor.service.DataPreparationService - Preparing dataset for IBM with 16273 samples
+2026-09-07 09:17:38.074 [Thread-5] DEBUG com.stockpredictor.util.FeatureExtractor - Extracting features: MA=true, RSI=true
+2026-09-07 09:17:38.076 [Thread-5] DEBUG com.stockpredictor.util.FeatureExtractor - Calculated 20-period moving average
+2026-09-07 09:17:38.079 [Thread-5] DEBUG com.stockpredictor.util.FeatureExtractor - Calculated 14-period RSI
+2026-09-07 09:17:38.084 [Thread-5] DEBUG com.stockpredictor.util.FeatureExtractor - Feature extraction complete for 16273 data points
+2026-09-07 09:17:38.093 [Thread-5] DEBUG com.stockpredictor.util.DataNormalizer - Applied Min-Max normalization: min=2.66729, max=329.23
+2026-09-07 09:17:38.095 [Thread-5] INFO  com.stockpredictor.service.DataPreparationService - Dataset prepared: 13018 train, 3255 test samples
+2026-09-07 09:17:38.096 [Thread-5] INFO  com.stockpredictor.service.ModelTrainerService - Training all models (quickMode: false)
+2026-09-07 09:17:38.099 [pool-3-thread-4] INFO  com.stockpredictor.service.ModelTrainerService - Training Linearna regresija model on 13018 samples
+2026-09-07 09:17:38.099 [pool-3-thread-5] INFO  com.stockpredictor.service.ModelTrainerService - Training Slu?ajna šuma model on 13018 samples
+2026-09-07 09:17:38.101 [pool-3-thread-6] INFO  com.stockpredictor.service.ModelTrainerService - Training Višeslojni perceptron model on 13018 samples
+2026-09-07 09:17:38.173 [pool-3-thread-4] INFO  com.stockpredictor.service.ModelTrainerService - Training complete: Linearna regresija - RMSE: 0.00947364427470105
+2026-09-07 09:17:40.081 [pool-3-thread-5] INFO  com.stockpredictor.service.ModelTrainerService - Training complete: Slu?ajna šuma - RMSE: 0.14155029944126557
+2026-09-07 09:17:54.460 [pool-3-thread-6] INFO  com.stockpredictor.service.ModelTrainerService - Training complete: Višeslojni perceptron - RMSE: 0.10287072780051151
+2026-09-07 09:19:05.015 [Thread-6] INFO  com.stockpredictor.service.BacktestingService - Running backtest for Slu?ajna šuma with 3255 data points
+2026-09-07 09:19:05.087 [Thread-6] INFO  com.stockpredictor.service.BacktestingService - Backtest complete: +1078.5488914466878 profit ({:.2f}%)
+2026-09-07 09:19:05.089 [Thread-6] INFO  com.stockpredictor.service.BacktestingService - Running backtest for Višeslojni perceptron with 3255 data points
+2026-09-07 09:19:05.110 [Thread-6] INFO  com.stockpredictor.service.BacktestingService - Backtest complete: +30901.217535762647 profit ({:.2f}%)
+2026-09-07 09:19:05.112 [Thread-6] INFO  com.stockpredictor.service.BacktestingService - Running backtest for Linearna regresija with 3255 data points
+2026-09-07 09:19:05.116 [Thread-6] INFO  com.stockpredictor.service.BacktestingService - Backtest complete: +15804.249950520534 profit ({:.2f}%)
+2026-09-07 09:19:05.118 [JavaFX Application Thread] DEBUG com.stockpredictor.service.ChartService - Creating prediction chart with 3250 predictions
+2026-09-07 09:19:05.696 [JavaFX Application Thread] DEBUG com.stockpredictor.service.ChartService - Creating error chart for Višeslojni perceptron
+2026-09-07 09:19:05.911 [JavaFX Application Thread] DEBUG com.stockpredictor.service.ChartService - Creating profit chart for Višeslojni perceptron

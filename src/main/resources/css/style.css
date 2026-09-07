@@ -1,0 +1,510 @@
+/* Stock Predictor - Application Stylesheet */
+
+/* ============================================
+   ROOT AND GENERAL STYLES
+   ============================================ */
+
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f5f6fa;
+}
+
+/* ============================================
+   MAIN CONTAINER
+   ============================================ */
+
+.main-container {
+    -fx-background-color: #f5f6fa;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+    -fx-background-color: linear-gradient(to right, #2c3e50, #3498db);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+}
+
+.app-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.app-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: rgba(255,255,255,0.8);
+}
+
+/* ============================================
+   STATUS BAR
+   ============================================ */
+
+.status-bar {
+    -fx-background-color: #2c3e50;
+}
+
+.status-text {
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-font-size: 12px;
+}
+
+/* ============================================
+   TAB PANE
+   ============================================ */
+
+.main-tabs {
+    -fx-tab-min-height: 40px;
+    -fx-tab-max-height: 40px;
+}
+
+.main-tabs .tab-header-area .tab-header-background {
+    -fx-background-color: #ecf0f1;
+}
+
+.main-tabs .tab {
+    -fx-background-color: #ecf0f1;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 8 20;
+}
+
+.main-tabs .tab:selected {
+    -fx-background-color: white;
+}
+
+.main-tabs .tab .tab-label {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-weight: bold;
+}
+
+.main-tabs .tab:selected .tab-label {
+    -fx-text-fill: #2c3e50;
+}
+
+.tab-content {
+    -fx-background-color: white;
+}
+
+/* ============================================
+   CONTROL SECTION
+   ============================================ */
+
+.control-section {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 15;
+    -fx-background-radius: 8;
+    -fx-border-color: #e9ecef;
+    -fx-border-radius: 8;
+}
+
+.control-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6c757d;
+    -fx-font-weight: bold;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.primary-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.primary-button:pressed {
+    -fx-background-color: #21618c;
+}
+
+.primary-button:disabled {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #7f8c8d;
+}
+
+.secondary-button {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+.secondary-button:disabled {
+    -fx-background-color: #bdc3c7;
+}
+
+.export-button {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 15;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.export-button:hover {
+    -fx-background-color: #229954;
+}
+
+.export-button:disabled {
+    -fx-background-color: #bdc3c7;
+}
+
+/* ============================================
+   TEXT INPUTS
+   ============================================ */
+
+.text-input {
+    -fx-background-color: white;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 8 12;
+}
+
+.text-input:focused {
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(gaussian, rgba(52,152,219,0.3), 5, 0, 0, 0);
+}
+
+/* ============================================
+   COMBO BOX
+   ============================================ */
+
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+/* ============================================
+   SLIDER
+   ============================================ */
+
+.slider .track {
+    -fx-background-color: #e9ecef;
+    -fx-background-radius: 5;
+    -fx-pref-height: 8;
+}
+
+.slider .thumb {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 10;
+    -fx-pref-width: 20;
+    -fx-pref-height: 20;
+}
+
+.slider-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: #6c757d;
+}
+
+/* ============================================
+   CHECK BOX
+   ============================================ */
+
+.check-box {
+    -fx-font-size: 13px;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #3498db;
+    -fx-border-color: #3498db;
+}
+
+/* ============================================
+   RADIO BUTTON
+   ============================================ */
+
+.radio-button .radio {
+    -fx-background-color: white;
+    -fx-border-color: #ced4da;
+}
+
+.radio-button:selected .radio {
+    -fx-background-color: #3498db;
+    -fx-border-color: #3498db;
+}
+
+/* ============================================
+   CHARTS
+   ============================================ */
+
+.chart-container {
+    -fx-background-color: white;
+    -fx-border-color: #e9ecef;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+}
+
+.chart {
+    -fx-background-color: white;
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+}
+
+.chart-plot-background {
+    -fx-background-color: white;
+}
+
+.axis {
+    -fx-tick-label-fill: #6c757d;
+}
+
+.axis-label {
+    -fx-text-fill: #495057;
+    -fx-font-weight: bold;
+}
+
+/* Chart series colors */
+.default-color0.chart-series-line { -fx-stroke: #3498db; -fx-stroke-width: 2px; }
+.default-color1.chart-series-line { -fx-stroke: #e74c3c; -fx-stroke-width: 2px; }
+.default-color2.chart-series-line { -fx-stroke: #27ae60; -fx-stroke-width: 2px; }
+.default-color3.chart-series-line { -fx-stroke: #f39c12; -fx-stroke-width: 2px; }
+
+/* ============================================
+   TABLES
+   ============================================ */
+
+.metrics-table {
+    -fx-background-color: white;
+    -fx-border-color: #e9ecef;
+    -fx-border-radius: 8;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f8f9fa;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* ============================================
+   TEXT AREAS
+   ============================================ */
+
+.details-area, .results-area {
+    -fx-font-family: "Consolas", "Monaco", monospace;
+    -fx-font-size: 12px;
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #e9ecef;
+    -fx-border-radius: 4;
+}
+
+/* ============================================
+   LABELS
+   ============================================ */
+
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.panel-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.info-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #495057;
+}
+
+.status-label {
+    -fx-font-size: 12px;
+}
+
+.placeholder-text {
+    -fx-text-fill: #adb5bd;
+    -fx-font-style: italic;
+}
+
+.hint-text {
+    -fx-font-size: 11px;
+    -fx-text-fill: #6c757d;
+    -fx-font-style: italic;
+}
+
+.export-desc {
+    -fx-text-fill: #6c757d;
+    -fx-font-size: 12px;
+}
+
+/* ============================================
+   INFO SECTION
+   ============================================ */
+
+.info-section {
+    -fx-background-color: #e3f2fd;
+    -fx-padding: 10 15;
+    -fx-background-radius: 5;
+}
+
+/* ============================================
+   METRICS
+   ============================================ */
+
+.metrics-summary {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 15;
+    -fx-background-radius: 8;
+    -fx-border-color: #e9ecef;
+    -fx-border-radius: 8;
+}
+
+.metric-box {
+    -fx-padding: 10 20;
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+.metric-title {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6c757d;
+}
+
+.metric-value {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* ============================================
+   BEST MODEL BOX
+   ============================================ */
+
+.best-model-box {
+    -fx-background-color: #d4edda;
+    -fx-padding: 15;
+    -fx-background-radius: 8;
+    -fx-border-color: #c3e6cb;
+    -fx-border-radius: 8;
+}
+
+.best-model-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #155724;
+}
+
+/* ============================================
+   CONFIG PANELS
+   ============================================ */
+
+.config-panel, .results-panel {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 20;
+    -fx-background-radius: 8;
+}
+
+.config-group {
+    -fx-padding: 5 0;
+}
+
+.export-panel, .settings-panel {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 20;
+    -fx-background-radius: 8;
+}
+
+/* ============================================
+   PROGRESS INDICATORS
+   ============================================ */
+
+.progress-indicator {
+    -fx-progress-color: #3498db;
+}
+
+.progress-bar {
+    -fx-accent: #3498db;
+}
+
+.progress-bar .track {
+    -fx-background-color: #e9ecef;
+    -fx-background-radius: 5;
+}
+
+.progress-bar .bar {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 5;
+}
+
+/* ============================================
+   DATE PICKER
+   ============================================ */
+
+.date-picker {
+    -fx-background-color: white;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 4;
+}
+
+/* ============================================
+   SEPARATOR
+   ============================================ */
+
+.separator .line {
+    -fx-border-color: #e9ecef;
+}
+
+/* ============================================
+   SCROLLBARS
+   ============================================ */
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #bdc3c7;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #95a5a6;
+}
+
+/* ============================================
+   RESULTS CONTAINER
+   ============================================ */
+
+.results-container {
+    -fx-background-color: white;
+    -fx-border-color: #e9ecef;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 15;
+}

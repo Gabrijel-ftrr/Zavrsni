@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<HBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.stockpredictor.controller.ModelController"
+      spacing="20" styleClass="tab-content">
+    
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <!-- Left Panel: Configuration -->
+    <VBox spacing="15" prefWidth="350" styleClass="config-panel">
+        
+        <Label text="Priprema podataka" styleClass="section-title"/>
+        
+        <VBox spacing="8" styleClass="config-group">
+            <Label text="Postupak normalizacije" styleClass="control-label"/>
+            <ComboBox fx:id="normalizationCombo" prefWidth="200"/>
+        </VBox>
+        
+        <VBox spacing="8" styleClass="config-group">
+            <Label text="Podjela podataka" styleClass="control-label"/>
+            <Slider fx:id="trainTestSlider" min="0.5" max="0.95" value="0.8"/>
+            <Label fx:id="trainTestLabel" text="Učenje: 80% / Ispitivanje: 20%" styleClass="slider-label"/>
+        </VBox>
+        
+        <VBox spacing="8" styleClass="config-group">
+            <Label text="Izdvajanje obilježja" styleClass="control-label"/>
+            <CheckBox fx:id="extractMACheckbox" text="Pomični prosjek (20 dana)" selected="true"/>
+            <CheckBox fx:id="extractRSICheckbox" text="RSI (14 dana)" selected="true"/>
+        </VBox>
+        
+        <Separator/>
+        
+        <Label text="Način treniranja" styleClass="section-title"/>
+        
+        <VBox spacing="8" styleClass="config-group">
+            <RadioButton fx:id="quickModeRadio" text="Brzi način (samo linearna regresija)" selected="true"/>
+            <RadioButton fx:id="fullModeRadio" text="Potpuni način (svi modeli)"/>
+        </VBox>
+        
+        <Region VBox.vgrow="ALWAYS"/>
+        
+        <HBox spacing="10">
+            <Button fx:id="trainButton" text="Treniraj modele" styleClass="primary-button" prefWidth="150"/>
+            <Button fx:id="autoSelectButton" text="Odaberi najbolji" styleClass="secondary-button" prefWidth="150" disable="true"/>
+        </HBox>
+        
+        <ProgressBar fx:id="trainingProgress" prefWidth="300" visible="false"/>
+        <Label fx:id="trainingStatusLabel" text="Najprije dohvatite podatke na kartici Podatci" styleClass="status-label"/>
+        
+    </VBox>
+
+    <!-- Right Panel: Results -->
+    <VBox spacing="15" HBox.hgrow="ALWAYS" styleClass="results-panel">
+        
+        <Label text="Rezultati vrednovanja modela" styleClass="section-title"/>
+        
+        <TableView fx:id="metricsTable" prefHeight="250" styleClass="metrics-table">
+            <columns>
+                <TableColumn fx:id="modelNameColumn" text="Model" prefWidth="180"/>
+                <TableColumn fx:id="rmseColumn" text="RMSE" prefWidth="100"/>
+                <TableColumn fx:id="maeColumn" text="MAE" prefWidth="100"/>
+                <TableColumn fx:id="r2Column" text="R²" prefWidth="100"/>
+                <TableColumn fx:id="timeColumn" text="Vrijeme (ms)" prefWidth="100"/>
+            </columns>
+            <placeholder>
+                <Label text="Trenirajte modele za prikaz rezultata"/>
+            </placeholder>
+        </TableView>
+        
+        <VBox fx:id="bestModelBox" spacing="10" visible="false" styleClass="best-model-box">
+            <Label fx:id="bestModelLabel" text="" styleClass="best-model-title"/>
+        </VBox>
+        
+        <Label text="Pojedinosti modela" styleClass="section-title"/>
+        
+        <TextArea fx:id="modelDetailsArea" prefHeight="200" editable="false" 
+                  wrapText="true" promptText="Odaberite model za prikaz pojedinosti" styleClass="details-area"/>
+        
+    </VBox>
+
+</HBox>

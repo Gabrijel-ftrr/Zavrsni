@@ -1,0 +1,105 @@
+2026-09-06 14:37:33.006 [main] INFO  com.stockpredictor.app.StockPredictorApp - Starting Stock Predictor application
+2026-09-06 14:37:33.034 [JavaFX Application Thread] INFO  com.stockpredictor.app.StockPredictorApp - Initializing application...
+2026-09-06 14:37:33.036 [JavaFX Application Thread] INFO  com.stockpredictor.config.ServiceProvider - Initializing services...
+2026-09-06 14:37:33.911 [JavaFX Application Thread] WARN  c.stockpredictor.service.AlphaVantageDataService - No API key set. Using demo key with limited functionality. Set ALPHA_VANTAGE_API_KEY environment variable or call setApiKey()
+2026-09-06 14:37:33.922 [JavaFX Application Thread] INFO  com.stockpredictor.config.ServiceProvider - All services initialized successfully
+2026-09-06 14:37:34.677 [JavaFX Application Thread] INFO  com.stockpredictor.controller.DashboardController - Initializing Dashboard controller
+2026-09-06 14:37:34.821 [JavaFX Application Thread] INFO  com.stockpredictor.controller.ModelController - Initializing Model controller
+2026-09-06 14:37:34.839 [JavaFX Application Thread] ERROR com.stockpredictor.app.StockPredictorApp - Failed to start application: 
+/C:/Users/Korisnik/Desktop/zavrsni-rad/target/classes/fxml/backtest.fxml:36
+/C:/Users/Korisnik/Desktop/zavrsni-rad/target/classes/fxml/main.fxml:38
+
+javafx.fxml.LoadException: 
+/C:/Users/Korisnik/Desktop/zavrsni-rad/target/classes/fxml/backtest.fxml:36
+/C:/Users/Korisnik/Desktop/zavrsni-rad/target/classes/fxml/main.fxml:38
+
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2722)
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2700)
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader$IncludeElement.constructValue(FXMLLoader.java:1155)
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:759)
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2853)
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2649)
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+	at com.stockpredictor.app.StockPredictorApp.start(StockPredictorApp.java:53)
+	at javafx.graphics@21.0.1/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+	at javafx.graphics@21.0.1/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+	at javafx.graphics@21.0.1/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics@21.0.1/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+	at javafx.graphics@21.0.1/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@21.0.1/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.1/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.lang.IllegalArgumentException: Invalid path.
+	at javafx.fxml@21.0.1/com.sun.javafx.fxml.expression.KeyPath.parse(KeyPath.java:196)
+	at javafx.fxml@21.0.1/com.sun.javafx.fxml.expression.KeyPath.parse(KeyPath.java:96)
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader$Element.resolvePrefixedValue(FXMLLoader.java:455)
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader$Element.processValue(FXMLLoader.java:375)
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader$Element.processPropertyAttribute(FXMLLoader.java:337)
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader$Element.processInstancePropertyAttributes(FXMLLoader.java:248)
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:780)
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2969)
+	at javafx.fxml@21.0.1/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2654)
+	... 17 common frames omitted
+2026-09-06 14:37:34.844 [JavaFX Application Thread] ERROR com.stockpredictor.app.StockPredictorApp - Fatal error: Failed to load application: 
+/C:/Users/Korisnik/Desktop/zavrsni-rad/target/classes/fxml/backtest.fxml:36
+/C:/Users/Korisnik/Desktop/zavrsni-rad/target/classes/fxml/main.fxml:38
+
+2026-09-06 20:00:38.045 [main] INFO  com.stockpredictor.app.StockPredictorApp - Starting Stock Predictor application
+2026-09-06 20:00:38.553 [JavaFX Application Thread] INFO  com.stockpredictor.app.StockPredictorApp - Initializing application...
+2026-09-06 20:00:38.554 [JavaFX Application Thread] INFO  com.stockpredictor.config.ServiceProvider - Initializing services...
+2026-09-06 20:00:38.837 [JavaFX Application Thread] WARN  c.stockpredictor.service.AlphaVantageDataService - No API key set. Using demo key with limited functionality. Set ALPHA_VANTAGE_API_KEY environment variable or call setApiKey()
+2026-09-06 20:00:38.844 [JavaFX Application Thread] INFO  com.stockpredictor.config.ServiceProvider - All services initialized successfully
+2026-09-06 20:00:39.082 [JavaFX Application Thread] INFO  com.stockpredictor.controller.DashboardController - Initializing Dashboard controller
+2026-09-06 20:00:39.152 [JavaFX Application Thread] INFO  com.stockpredictor.controller.ModelController - Initializing Model controller
+2026-09-06 20:00:39.195 [JavaFX Application Thread] INFO  com.stockpredictor.controller.BacktestController - Initializing Backtest controller
+2026-09-06 20:00:39.220 [JavaFX Application Thread] INFO  com.stockpredictor.controller.ExportController - Initializing Export controller
+2026-09-06 20:00:39.226 [JavaFX Application Thread] INFO  com.stockpredictor.controller.MainController - Initializing Main controller
+2026-09-06 20:00:39.288 [JavaFX Application Thread] DEBUG com.stockpredictor.app.StockPredictorApp - Application icon not found, using default
+2026-09-06 20:00:40.182 [JavaFX Application Thread] INFO  com.stockpredictor.app.StockPredictorApp - Application started successfully
+2026-09-06 20:00:59.465 [JavaFX Application Thread] INFO  com.stockpredictor.service.CSVService - Importing stock data from: C:\Users\Korisnik\Downloads\ibm_us_d.csv
+2026-09-06 20:00:59.765 [JavaFX Application Thread] INFO  com.stockpredictor.service.CSVService - Imported 16273 records from CSV
+2026-09-06 20:00:59.767 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Extracting features: MA=true, RSI=true
+2026-09-06 20:00:59.782 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Calculated 20-period moving average
+2026-09-06 20:00:59.798 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Calculated 14-period RSI
+2026-09-06 20:00:59.804 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Feature extraction complete for 16273 data points
+2026-09-06 20:01:00.665 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Extracting features: MA=true, RSI=true
+2026-09-06 20:01:00.666 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Calculated 20-period moving average
+2026-09-06 20:01:00.681 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Calculated 14-period RSI
+2026-09-06 20:01:00.687 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Feature extraction complete for 16273 data points
+2026-09-06 20:01:00.687 [JavaFX Application Thread] DEBUG com.stockpredictor.service.ChartService - Creating chart with indicators (MA: true)
+2026-09-06 20:01:12.720 [JavaFX Application Thread] DEBUG com.stockpredictor.service.ChartService - Creating RSI chart with 16273 data points
+2026-09-06 20:01:54.090 [JavaFX Application Thread] INFO  com.stockpredictor.service.CSVService - Importing stock data from: C:\Users\Korisnik\Downloads\ibm_us_d.csv
+2026-09-06 20:01:54.231 [JavaFX Application Thread] INFO  com.stockpredictor.service.CSVService - Imported 16273 records from CSV
+2026-09-06 20:01:54.232 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Extracting features: MA=true, RSI=true
+2026-09-06 20:01:54.234 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Calculated 20-period moving average
+2026-09-06 20:01:54.239 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Calculated 14-period RSI
+2026-09-06 20:01:54.245 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Feature extraction complete for 16273 data points
+2026-09-06 20:01:54.446 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Extracting features: MA=true, RSI=true
+2026-09-06 20:01:54.448 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Calculated 20-period moving average
+2026-09-06 20:01:54.454 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Calculated 14-period RSI
+2026-09-06 20:01:54.460 [JavaFX Application Thread] DEBUG com.stockpredictor.util.FeatureExtractor - Feature extraction complete for 16273 data points
+2026-09-06 20:01:54.460 [JavaFX Application Thread] DEBUG com.stockpredictor.service.ChartService - Creating chart with indicators (MA: true)
+2026-09-06 20:02:06.247 [JavaFX Application Thread] DEBUG com.stockpredictor.service.ChartService - Creating RSI chart with 16273 data points
+2026-09-06 20:02:28.291 [Thread-3] INFO  com.stockpredictor.service.DataPreparationService - Preparing dataset for IBM with 16273 samples
+2026-09-06 20:02:28.292 [Thread-3] DEBUG com.stockpredictor.util.FeatureExtractor - Extracting features: MA=true, RSI=true
+2026-09-06 20:02:28.294 [Thread-3] DEBUG com.stockpredictor.util.FeatureExtractor - Calculated 20-period moving average
+2026-09-06 20:02:28.297 [Thread-3] DEBUG com.stockpredictor.util.FeatureExtractor - Calculated 14-period RSI
+2026-09-06 20:02:28.304 [Thread-3] DEBUG com.stockpredictor.util.FeatureExtractor - Feature extraction complete for 16273 data points
+2026-09-06 20:02:28.314 [Thread-3] DEBUG com.stockpredictor.util.DataNormalizer - Applied Min-Max normalization: min=2.66729, max=329.23
+2026-09-06 20:02:28.314 [Thread-3] INFO  com.stockpredictor.service.DataPreparationService - Dataset prepared: 13018 train, 3255 test samples
+2026-09-06 20:02:28.315 [Thread-3] INFO  com.stockpredictor.service.ModelTrainerService - Training all models (quickMode: false)
+2026-09-06 20:02:28.339 [pool-3-thread-1] INFO  com.stockpredictor.service.ModelTrainerService - Training Linearna regresija model on 13018 samples
+2026-09-06 20:02:28.339 [pool-3-thread-3] INFO  com.stockpredictor.service.ModelTrainerService - Training Višeslojni perceptron model on 13018 samples
+2026-09-06 20:02:28.339 [pool-3-thread-2] INFO  com.stockpredictor.service.ModelTrainerService - Training Slu?ajna šuma model on 13018 samples
+2026-09-06 20:02:29.283 [pool-3-thread-1] INFO  com.stockpredictor.service.ModelTrainerService - Training complete: Linearna regresija - RMSE: 0.00947364427470105
+2026-09-06 20:02:30.867 [pool-3-thread-2] INFO  com.stockpredictor.service.ModelTrainerService - Training complete: Slu?ajna šuma - RMSE: 0.14155029944126557
+2026-09-06 20:02:45.143 [pool-3-thread-3] INFO  com.stockpredictor.service.ModelTrainerService - Training complete: Višeslojni perceptron - RMSE: 0.10287072780051151
+2026-09-06 20:04:44.998 [JavaFX Application Thread] DEBUG com.stockpredictor.controller.MainController - Model selected: Linearna regresija
+2026-09-06 20:05:10.422 [Thread-4] INFO  com.stockpredictor.service.BacktestingService - Running backtest for Linearna regresija with 3255 data points
+2026-09-06 20:05:10.439 [Thread-4] INFO  com.stockpredictor.service.BacktestingService - Backtest complete: +15804.249950520534 profit ({:.2f}%)
+2026-09-06 20:05:10.442 [JavaFX Application Thread] DEBUG com.stockpredictor.service.ChartService - Creating prediction chart with 3250 predictions
+2026-09-06 20:05:11.006 [JavaFX Application Thread] DEBUG com.stockpredictor.service.ChartService - Creating error chart for Linearna regresija
+2026-09-06 20:05:11.254 [JavaFX Application Thread] DEBUG com.stockpredictor.service.ChartService - Creating profit chart for Linearna regresija

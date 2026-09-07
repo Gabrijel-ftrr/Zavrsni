@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.stockpredictor.controller.MainController"
+            styleClass="main-container">
+
+    <!-- Top: Header -->
+    <top>
+        <HBox styleClass="header" alignment="CENTER_LEFT" spacing="20">
+            <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+            <Label text="📈 Predviđanje cijena dionica" styleClass="app-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Predviđanje cijena dionica metodama strojnog učenja" styleClass="app-subtitle"/>
+            <Button text="O aplikaciji" onAction="#showAbout" styleClass="secondary-button"/>
+        </HBox>
+    </top>
+
+    <!-- Center: Tab Pane -->
+    <center>
+        <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE" styleClass="main-tabs">
+            
+            <!-- Dashboard Tab -->
+            <Tab fx:id="dashboardTab" text="📊 Podatci">
+                <fx:include source="dashboard.fxml" fx:id="dashboard"/>
+            </Tab>
+            
+            <!-- Model Training Tab -->
+            <Tab fx:id="modelTab" text="🤖 Treniranje modela">
+                <fx:include source="model.fxml" fx:id="model"/>
+            </Tab>
+            
+            <!-- Backtest Tab -->
+            <Tab fx:id="backtestTab" text="📈 Simulacija strategije">
+                <fx:include source="backtest.fxml" fx:id="backtest"/>
+            </Tab>
+            
+            <!-- Export & Settings Tab -->
+            <Tab fx:id="exportTab" text="⚙️ Izvoz i postavke">
+                <fx:include source="export.fxml" fx:id="export"/>
+            </Tab>
+            
+        </TabPane>
+    </center>
+
+    <!-- Bottom: Status Bar -->
+    <bottom>
+        <HBox styleClass="status-bar" alignment="CENTER_LEFT" spacing="20">
+            <padding><Insets top="8" right="15" bottom="8" left="15"/></padding>
+            <Label text="Spremno" styleClass="status-text"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Izradio: Gabrijel Matanović  |  Elektroničko poslovanje i programsko inženjerstvo" styleClass="status-text"/>
+            <Label text="|" styleClass="status-text"/>
+            <Label text="Alpha Vantage API" styleClass="status-text"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,40 @@
+POKRETANJE APLIKACIJE
+=====================
+Autor: Gabrijel Matanovic
+
+1) Otvori PowerShell u ovoj mapi
+   (u File Exploreru klikni u adresnu traku, upisi: powershell)
+
+2) Postavi Javu 17:
+
+   $env:JAVA_HOME="C:\Program Files\Java\jdk-17"
+
+3) Sagradi izvrsnu datoteku:
+
+   & "C:\Program Files\Apache\apache-maven-3.9.11\bin\mvn.cmd" clean package -DskipTests
+
+4) Pokreni:
+
+   java -jar target\stock-predictor-1.0.0.jar
+
+   (ako te datoteke nema, provjeri naziv u mapi target -
+    moze biti stock-predictor-1.0.0-shaded.jar)
+
+VAZNO: ne koristi "mvn javafx:run" - taj nacin stavlja
+biblioteke na module path, sto rusi Weku
+(NoClassDefFoundError: weka.core.Capabilities).
+
+
+UCITAVANJE PODATAKA
+===================
+Kartica "Podatci":
+ - upisi oznaku dionice (npr. IBM)
+ - klikni "Uvezi CSV" i odaberi preuzetu datoteku
+   (stooq.com -> trazi dionicu -> Historical data ->
+    Download data in csv file)
+
+Preporuka: ogranici razdoblje na zadnjih 10-ak godina.
+Cijela povijest od 1962. usporava treniranje bez koristi.
+
+Alternativa bez CSV-a: klikni "Dohvati podatke"
+(potreban ALPHA_VANTAGE_API_KEY, daje oko 100 zapisa).

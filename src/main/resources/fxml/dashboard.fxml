@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.stockpredictor.controller.DashboardController"
+      spacing="15" styleClass="tab-content">
+    
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <!-- Controls Section -->
+    <HBox spacing="15" alignment="CENTER_LEFT" styleClass="control-section">
+        <VBox spacing="5">
+            <Label text="Oznaka dionice" styleClass="control-label"/>
+            <TextField fx:id="symbolField" promptText="npr. AAPL" prefWidth="120" styleClass="text-input"/>
+        </VBox>
+        
+        <VBox spacing="5">
+            <Label text="Početni datum" styleClass="control-label"/>
+            <DatePicker fx:id="startDatePicker" prefWidth="150"/>
+        </VBox>
+        
+        <VBox spacing="5">
+            <Label text="Završni datum" styleClass="control-label"/>
+            <DatePicker fx:id="endDatePicker" prefWidth="150"/>
+        </VBox>
+        
+        <Button fx:id="fetchButton" text="Dohvati podatke" styleClass="primary-button" prefWidth="120"/>
+        <Button fx:id="importButton" text="Uvezi CSV" styleClass="secondary-button" prefWidth="110"/>
+        
+        <ProgressIndicator fx:id="loadingIndicator" visible="false" prefWidth="30" prefHeight="30"/>
+        
+        <Region HBox.hgrow="ALWAYS"/>
+        
+        <VBox spacing="5">
+            <CheckBox fx:id="showMACheckbox" text="Pomični prosjek" selected="true"/>
+            <CheckBox fx:id="showRSICheckbox" text="Pokazatelj RSI" selected="true"/>
+        </VBox>
+    </HBox>
+
+    <!-- Stock Info -->
+    <HBox styleClass="info-section" alignment="CENTER_LEFT">
+        <Label fx:id="stockInfoLabel" text="Unesite oznaku dionice i kliknite Dohvati podatke" styleClass="info-label"/>
+    </HBox>
+
+    <!-- Main Chart -->
+    <BorderPane fx:id="chartContainer" VBox.vgrow="ALWAYS" styleClass="chart-container">
+        <center>
+            <Label text="Grafikon će se prikazati nakon dohvata podataka" styleClass="placeholder-text"/>
+        </center>
+    </BorderPane>
+
+    <!-- RSI Chart (Optional) -->
+    <VBox fx:id="rsiChartContainer" prefHeight="200" styleClass="chart-container"/>
+
+    <!-- Status -->
+    <HBox alignment="CENTER_LEFT">
+        <Label fx:id="statusLabel" text="" styleClass="status-label"/>
+    </HBox>
+
+</VBox>

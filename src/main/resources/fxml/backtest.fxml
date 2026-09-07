@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.stockpredictor.controller.BacktestController"
+      spacing="15" styleClass="tab-content">
+    
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <!-- Controls -->
+    <HBox spacing="15" alignment="CENTER_LEFT" styleClass="control-section">
+        <VBox spacing="5">
+            <Label text="Početni ulog ($)" styleClass="control-label"/>
+            <TextField fx:id="investmentField" promptText="10000" prefWidth="120" styleClass="text-input"/>
+        </VBox>
+        
+        <Button fx:id="runBacktestButton" text="Pokreni simulaciju" styleClass="primary-button" prefWidth="130" disable="true"/>
+        <Button fx:id="compareModelsButton" text="Usporedi sve modele" styleClass="secondary-button" prefWidth="150" disable="true"/>
+        
+        <ProgressBar fx:id="backtestProgress" prefWidth="200" visible="false"/>
+        
+        <Region HBox.hgrow="ALWAYS"/>
+        
+        <Label fx:id="backtestStatusLabel" text="Najprije trenirajte model" styleClass="status-label"/>
+    </HBox>
+
+    <!-- Metrics Summary -->
+    <VBox fx:id="metricsBox" spacing="10" visible="false" styleClass="metrics-summary">
+        <HBox spacing="30" alignment="CENTER">
+            <VBox alignment="CENTER" styleClass="metric-box">
+                <Label text="Ukupna dobit" styleClass="metric-title"/>
+                <Label fx:id="profitLabel" text="\$0.00" styleClass="metric-value"/>
+            </VBox>
+            <VBox alignment="CENTER" styleClass="metric-box">
+                <Label text="Udio dobitnih" styleClass="metric-title"/>
+                <Label fx:id="winRateLabel" text="0%" styleClass="metric-value"/>
+            </VBox>
+            <VBox alignment="CENTER" styleClass="metric-box">
+                <Label text="Najveći pad" styleClass="metric-title"/>
+                <Label fx:id="maxDrawdownLabel" text="0%" styleClass="metric-value"/>
+            </VBox>
+            <VBox alignment="CENTER" styleClass="metric-box">
+                <Label text="Prosj. pogreška" styleClass="metric-title"/>
+                <Label fx:id="avgErrorLabel" text="0.0" styleClass="metric-value"/>
+            </VBox>
+        </HBox>
+    </VBox>
+
+    <!-- Charts Grid -->
+    <GridPane hgap="15" vgap="15" VBox.vgrow="ALWAYS">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50"/>
+            <ColumnConstraints percentWidth="50"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints percentHeight="50"/>
+            <RowConstraints percentHeight="50"/>
+        </rowConstraints>
+
+        <!-- Prediction vs Actual Chart -->
+        <BorderPane fx:id="predictionChartContainer" styleClass="chart-container" 
+                    GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <center>
+                <Label text="Predviđene i stvarne cijene" styleClass="placeholder-text"/>
+            </center>
+        </BorderPane>
+
+        <!-- Error Chart -->
+        <BorderPane fx:id="errorChartContainer" styleClass="chart-container"
+                    GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <center>
+                <Label text="Pogreška kroz vrijeme" styleClass="placeholder-text"/>
+            </center>
+        </BorderPane>
+
+        <!-- Profit Chart -->
+        <BorderPane fx:id="profitChartContainer" styleClass="chart-container"
+                    GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <center>
+                <Label text="Kretanje vrijednosti portfelja" styleClass="placeholder-text"/>
+            </center>
+        </BorderPane>
+
+        <!-- Results Text -->
+        <VBox GridPane.columnIndex="1" GridPane.rowIndex="1" spacing="10" styleClass="results-container">
+            <Label text="Podrobni rezultati" styleClass="section-title"/>
+            <TextArea fx:id="resultsArea" VBox.vgrow="ALWAYS" editable="false" 
+                      wrapText="true" promptText="Pokrenite simulaciju za prikaz podrobnih rezultata" 
+                      styleClass="results-area"/>
+        </VBox>
+    </GridPane>
+
+</VBox>
