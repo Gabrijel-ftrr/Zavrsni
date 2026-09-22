@@ -170,7 +170,7 @@ Pristupni ključ prikazuje se samo djelomično.
 - JDK 17
 - Apache Maven 3.8+
 
-### Izgradnja i pokretanje
+### Build i pokretanje
 
 ```bash
 mvn clean package -DskipTests
@@ -182,16 +182,7 @@ java -jar target/stock-predictor-1.0.0.jar
 > (`NoClassDefFoundError: Could not initialize class weka.core.Capabilities`).
 > Izvršni JAR sve stavlja na classpath i radi ispravno.
 
-### Windows izvršna datoteka
 
-Uz JDK 17 (`jpackage` je uključen):
-
-| Skripta | Rezultat | Treba Java? |
-|---|---|---|
-| `napravi-exe.bat` | mapa s `.exe` | ne |
-| `napravi-instalaciju.bat` | instalacijski `.exe` (treba WiX Toolset **v3**) | ne |
-
----
 
 ## Podatci
 
@@ -258,7 +249,7 @@ dohvat / uvoz  →  FeatureExtractor (SMA, RSI)  →  DataNormalizer
 mvn test
 ```
 
-Četiri testna razreda: `FeatureExtractorTest`, `DataPreparationServiceTest`,
+Četiri testne klase: `FeatureExtractorTest`, `DataPreparationServiceTest`,
 `CSVServiceTest`, `AlphaVantageDataServiceTest`. Testovi koji zahtijevaju mrežni
 poziv izvode se samo kad je postavljen pristupni ključ.
 
